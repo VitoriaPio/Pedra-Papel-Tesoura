@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+  --primary-color: #ff0000;
+  --secondary-color: #ffff00;
+  --black-color: #262626;
+  --gray-color: #595857;
+  --white-color: #d9d9d9;
+}
+@font-face {
+  font-family: 'empire';
+  src: url(../fonts/Supersonic\ Rocketship.ttf) format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'empire', monospace;
+}
+.main {
+  background-image: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.8rem;
+}
+#credit {
+  width: 400px;
+  height: 400px;
+  display: none;
+  background-color: red;
+  position: absolute;
+  padding: 30px;
+  color: yellow;
+  border-radius: 10px;
+}
+.main-title {
+  text-align: center;
+  font-size: 2.8rem;
+  position: relative;
+  color: red;
+  text-shadow: 4px 3px black;
+}
+.logo {
+  width: 50%;
+  height: 400px;
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+}
+nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+nav a button,
+nav button {
+  width: 250px;
+  padding: 20px;
+  font-size: 30px;
+  background-color: yellow;
+  color: red;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+nav a button:hover,
+nav button:hover {
+  color: yellow;
+  background-color: red;
+  border-color: yellow;
+}
+
+/* modal design */
+.fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--white-color);
+  z-index: 10;
+
+  width: 600px;
+  max-width: 80%;
+
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+}
+
+.modal,
+.fade {
+  transition: 0.5s;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-color);
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.modal-header-title h2 {
+  color: var(--primary-color);
+}
+
+.modal-header-title h4 {
+  color: var(--gray-color);
+  font-weight: 500;
+}
+
+.close-modal {
+  outline: none;
+  border: none;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  background-color: hsl(0, 100%, 40%);
+  color: var(--white-color);
+}
+
+.modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.modal.hide {
+  top: 0;
+}
+
+.fade.hide,
+.modal.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* modal body design */
+.dev-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dev-container .img-container {
+  width: 5rem;
+}
+
+.img-container img {
+  max-width: 100%;
+  object-fit: scale-down;
+}
+
+.dev-info {
+  gap: 1rem;
+}
+
+.dev-info .social {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.3rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.social .bx {
+  color: var(--gray-color);
+  font-size: 1.6rem;
+}
+
+.social a {
+  color: var(--gray-color);
+  text-decoration: none;
+
+  transition: 0.5s ease;
+}
+
+.social a:hover {
+  color: var(--primary-color);
+}
+
+/* responsive */
+@media screen and (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo{
+    width: 90%;
+  }
+  .main-title{
+    font-size: 2.1rem;
+  }
+}
